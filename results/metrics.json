@@ -1,0 +1,191 @@
+{
+  "dataset": {
+    "train_rows": 125973,
+    "test_rows": 22544,
+    "train_class_counts": {
+      "Normal": 67343,
+      "DoS": 45927,
+      "Probe": 11656,
+      "R2L": 995,
+      "U2R": 52
+    },
+    "test_class_counts": {
+      "Normal": 9711,
+      "DoS": 7458,
+      "R2L": 2887,
+      "Probe": 2421,
+      "U2R": 67
+    },
+    "unseen_attack_types": [
+      "apache2",
+      "httptunnel",
+      "mailbomb",
+      "mscan",
+      "named",
+      "processtable",
+      "ps",
+      "saint",
+      "sendmail",
+      "snmpgetattack",
+      "snmpguess",
+      "sqlattack",
+      "udpstorm",
+      "worm",
+      "xlock",
+      "xsnoop",
+      "xterm"
+    ],
+    "unseen_attack_rows": 3750
+  },
+  "binary": {
+    "models": {
+      "LogisticRegression": {
+        "accuracy": 0.7540809084457062,
+        "precision": 0.9176120087086055,
+        "recall": 0.6240162082132004,
+        "f1": 0.7428571428571429,
+        "roc_auc": 0.7918254286991138,
+        "false_positive_rate": 0.07403974873854392,
+        "train_seconds": 2.5
+      },
+      "RandomForest": {
+        "accuracy": 0.7667228530872959,
+        "precision": 0.9674154529745742,
+        "recall": 0.6107691108859971,
+        "f1": 0.7487938858371149,
+        "roc_auc": 0.9613350171230409,
+        "false_positive_rate": 0.027185665739882608,
+        "train_seconds": 5.6
+      },
+      "HistGradientBoosting": {
+        "accuracy": 0.8091731724627396,
+        "precision": 0.9700275482093664,
+        "recall": 0.685965869243357,
+        "f1": 0.8036333759357313,
+        "roc_auc": 0.9593274704654534,
+        "false_positive_rate": 0.028009473792606324,
+        "train_seconds": 5.0
+      },
+      "SoftVoting (mean)": {
+        "accuracy": 0.7955110007097232,
+        "precision": 0.9701543739279588,
+        "recall": 0.6611080807293696,
+        "f1": 0.7863564741866717,
+        "roc_auc": 0.9549350258149767,
+        "false_positive_rate": 0.026876737720111215
+      },
+      "EntropyWeightedFusion": {
+        "accuracy": 0.7966643009226402,
+        "precision": 0.9704573970571461,
+        "recall": 0.662978259175563,
+        "f1": 0.7877777777777778,
+        "roc_auc": 0.9554441764885659,
+        "false_positive_rate": 0.026670785706930284
+      }
+    },
+    "fusion_detection_rate_by_category": {
+      "DoS": 0.8616251005631537,
+      "Probe": 0.7914085088806279,
+      "R2L": 0.05334257014201593,
+      "U2R": 0.1791044776119403
+    },
+    "fusion_detection_rate_unseen_attacks": 0.4056,
+    "fusion_mean_weights": {
+      "LogisticRegression": 0.349,
+      "RandomForest": 0.287,
+      "HistGradientBoosting": 0.364
+    }
+  },
+  "multiclass": {
+    "models": {
+      "LogisticRegression": {
+        "accuracy": 0.7905872959545777,
+        "macro_f1": 0.6047698490134106,
+        "weighted_f1": 0.7762787865240426
+      },
+      "RandomForest": {
+        "accuracy": 0.7421486870120653,
+        "macro_f1": 0.5114910051999135,
+        "weighted_f1": 0.6982319690428006
+      },
+      "HistGradientBoosting": {
+        "accuracy": 0.80083392476934,
+        "macro_f1": 0.664728559340094,
+        "weighted_f1": 0.784289900443544
+      },
+      "EntropyWeightedFusion": {
+        "accuracy": 0.7916962384669979,
+        "macro_f1": 0.6195013521601781,
+        "weighted_f1": 0.7719967911102985
+      }
+    },
+    "fusion_per_class": {
+      "Normal": {
+        "precision": 0.7092524509803921,
+        "recall": 0.9535578210277006,
+        "f1-score": 0.8134580752844028,
+        "support": 9711.0
+      },
+      "DoS": {
+        "precision": 0.9343410486537553,
+        "recall": 0.7956556717618665,
+        "f1-score": 0.859439495980882,
+        "support": 7458.0
+      },
+      "Probe": {
+        "precision": 0.8621739130434782,
+        "recall": 0.8190830235439901,
+        "f1-score": 0.8400762550307138,
+        "support": 2421.0
+      },
+      "R2L": {
+        "precision": 0.9513991163475699,
+        "recall": 0.22376169033598892,
+        "f1-score": 0.36231071228266964,
+        "support": 2887.0
+      },
+      "U2R": {
+        "precision": 0.15822784810126583,
+        "recall": 0.373134328358209,
+        "f1-score": 0.2222222222222222,
+        "support": 67.0
+      }
+    }
+  },
+  "anomaly_isolation_forest": {
+    "accuracy": 0.7915631653655074,
+    "precision": 0.9750058397570661,
+    "recall": 0.650510402867607,
+    "f1": 0.7803692451507361,
+    "roc_auc": 0.9429884088078934,
+    "false_positive_rate": 0.022036865410359385,
+    "detection_rate_unseen_attacks": 0.6197333333333334,
+    "detection_rate_by_category": {
+      "DoS": 0.7995441137034057,
+      "Probe": 0.8979760429574556,
+      "R2L": 0.06754416349151368,
+      "U2R": 0.23880597014925373
+    }
+  },
+  "hybrid_fusion_or_anomaly": {
+    "accuracy": 0.8391146202980837,
+    "precision": 0.9682604272634792,
+    "recall": 0.7416816021195356,
+    "f1": 0.8399594051978997,
+    "roc_auc": 0.9464146740352005,
+    "false_positive_rate": 0.0321285140562249,
+    "detection_rate_by_category": {
+      "DoS": 0.9081523196567445,
+      "Probe": 0.979760429574556,
+      "R2L": 0.12088673363352961,
+      "U2R": 0.3582089552238806
+    },
+    "detection_rate_unseen_attacks": 0.6506666666666666
+  },
+  "mitre_mapping": {
+    "DoS": "T1498/T1499 Network & Endpoint Denial of Service",
+    "Probe": "T1046 Network Service Discovery",
+    "R2L": "T1110 Brute Force / T1190 Exploit Public-Facing Application",
+    "U2R": "T1068 Exploitation for Privilege Escalation"
+  }
+}

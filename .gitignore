@@ -1,0 +1,5 @@
+data/*.txt
+models/
+__pycache__/
+*.pyc
+.venv/
