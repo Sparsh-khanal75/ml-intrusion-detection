@@ -105,3 +105,7 @@ results/          metrics.json and figures from the last run
 
 ---
 Dataset: M. Tavallaee, E. Bagheri, W. Lu, A. Ghorbani, *"A Detailed Analysis of the KDD CUP 99 Data Set,"* IEEE CISDA 2009.
+
+## Author
+
+**Sparsh Khanal** · [GitHub](https://github.com/Sparsh-khanal75) · [LinkedIn](https://www.linkedin.com/in/Sparsh-khanal75)
